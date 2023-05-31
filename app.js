@@ -1,5 +1,5 @@
 let contractABI;
-let contractAddress = "";  // You will fill this out with your contract address
+let contractAddress = "0x2a5020c1a4cF17afd0a74Ec827736D8Fc65e8071";  // You will fill this out with your contract address
 let accounts;
 let web3;
 let contract;
