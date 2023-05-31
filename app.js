@@ -42,11 +42,26 @@ function setupContract() {
 }
 
 function startApp() {
+    updateLockTime();
+    setInterval(updateLockTime, 1000); // Update lock time every second
+}
+
+function updateLockTime() {
     contract.methods.LockTimeOf(accounts[0]).call()
         .then(result => {
             const lockTime = new Date(result * 1000);
-            document.getElementById('lockTime').innerText = 'Lock Time: ' + lockTime.toLocaleString();
+            const currentTime = new Date();
+            const timeRemaining = lockTime - currentTime;
+            document.getElementById('lockTime').innerText = 'Lock Time: ' + formatTimeRemaining(timeRemaining);
         });
+}
+
+function formatTimeRemaining(timeRemaining) {
+    const hours = Math.floor(timeRemaining / 3600000);
+    const minutes = Math.floor((timeRemaining % 3600000) / 60000);
+    const seconds = Math.floor((timeRemaining % 60000) / 1000);
+
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
 function displayAccount() {
