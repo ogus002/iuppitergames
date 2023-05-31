@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#connectButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+#lockedTokenDiv {
+    margin-top: 30px;
+    display: none;
+}
+
+#lockButton, #unlockButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+}
