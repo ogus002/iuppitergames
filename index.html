@@ -4,6 +4,37 @@
     <meta charset="UTF-8">
     <title>IUPPITERgames</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #connectButton {
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+
+        #lockedTokenDiv {
+            display: none;
+            text-align: center;
+        }
+
+        #lockButton,
+        #unlockButton {
+            margin-top: 10px;
+            padding: 10px 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>IUPPITERgames Token</h1>
@@ -11,6 +42,9 @@
     <button id="connectButton">Connect to MetaMask</button>
     <div id="lockedTokenDiv">
         <h2>Locked Tokens</h2>
+        <input type="text" id="recipientAddress" placeholder="Recipient Address">
+        <input type="text" id="amount" placeholder="Amount">
+        <input type="text" id="lockDuration" placeholder="Lock Duration (seconds)">
         <button id="lockButton">Lock Tokens</button>
         <button id="unlockButton">Unlock Tokens</button>
         <p id="lockTime"></p>
